@@ -3,8 +3,8 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 mongoose.set("srtictQuery", true);
 
-const stagesRoutes = require("./routes/stagesRoutes");
-const etudiantsRoutes = require("./routes/etudiantsRoutes");
+const stagesRoutes = require("./routes/stages-Routes");
+const etudiantsRoutes = require("./routes/etudiants-Routes");
 const HttpErreur = require("./models/http-erreur");
 
 const app = express();
