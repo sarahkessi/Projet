@@ -2,6 +2,7 @@ const { v4: uuidv4 } = require("uuid");
 const HttpErreur = require("../models/http-erreur");
 
 const Etudiant = require("../models/Etudiant");
+const { get } = require("mongoose");
 
 const ETUDIANTS = [];
 
@@ -55,3 +56,30 @@ const inscription = async (requete, reponse, next) => {
         .status(201)
         .json({etudiant: nouvelEtudiant.toObject({getter: true}) });
 };
+
+const connexion = async (requete, reponse, next) => {
+    const {courriel, motDePasse } = requete.body;
+    
+    let etudiantExiste;
+
+    try {
+        etudiantExiste = await Etudiant.findOne({courriel: courriel});
+    } catch {
+        return next (
+            new HttpErreur("Connexion échoucée, veuilez réessayer plus tard", 500)
+        );
+    }
+
+    if (!etudiantExiste || etudiantExiste.motDePasse !== motDePasse) {
+        return next(new HttpErreur("Courriel ou mot de passe incorrect", 401));
+    }
+
+    reponse.json({
+        message: "Connexion réussie !",
+        etudiant: etudiantExiste.toObject({getters: true}),
+    });
+};
+
+exports.getEtudiants = getEtudiants;
+exports.inscription = inscription;
+exports.connexion = connexion;
