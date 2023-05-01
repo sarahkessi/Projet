@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-mongoose.set("srtictQuery", true);
+mongoose.set("strictQuery", true);
 
 const stagesRoutes = require("./routes/stages-Routes");
 const etudiantsRoutes = require("./routes/etudiants-Routes");
@@ -18,7 +18,7 @@ app.use((requete, reponse, next) => {
   next();
 });
 
-app.use("/api/stages", stagesRoutes);
+//app.use("/api/stages", stagesRoutes);
 app.use("/api/etudiants", etudiantsRoutes);
 
 app.use((requete, reponse, next) => {
