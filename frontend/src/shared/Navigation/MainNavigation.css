@@ -1,0 +1,24 @@
+.main-navigation-titre {
+    text-align: center;
+    color: white;
+    margin: 0;
+    font-size: 30px;
+    text-shadow: 1px 1px #ccc;
+    align-items: center;
+}
+
+.main-navigation-titre a {
+    text-decoration: none;
+    color:white;
+}
+
+nav {
+    float: right;
+    display: flex;
+}
+
+img {
+    float: left;
+    width: 220px;
+    height: auto;
+}

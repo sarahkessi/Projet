@@ -1,0 +1,39 @@
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    display: flex;
+    justify-content: center;
+}
+
+article {
+    flex-basis: calc(50% - 20px);
+    background-color: #fff;
+    box-shadow: 1px 1px #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+article h2 {
+    color: #81D224;
+    margin: 0 0 10px 0;
+}
+article p {
+    margin: 10px 0;
+    line-height: 1.5;
+    color: #666;
+}
+aside {
+    flex-basis: 25%;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px #ccc;
+    margin-bottom: 20px;
+}
+aside a {
+    color: #008080;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}

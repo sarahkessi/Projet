@@ -1,0 +1,24 @@
+.article-profils {
+        flex-basis: calc(80% - 20px);
+        background-color: #fff;
+        box-shadow: 1px 1px #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 20px;
+        justify-content: center;
+}
+
+.liste {
+        list-style-type: circle;
+        margin: 10px;
+      }
+
+.liens {
+        transition: background-color 0.2s ease-in-out;
+    }
+
+.titres {
+        font-size: 30px;
+        color: #097509;
+        font-family: 'Bitter', serif;
+}
