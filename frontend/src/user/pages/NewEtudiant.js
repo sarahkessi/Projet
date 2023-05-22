@@ -48,7 +48,7 @@ const NewEtudiant = () => {
 
     try {
       const reponseData = await sendRequest(
-        "http://localhost:5000/api/etudiants/inscription",
+        process.env.REACT_APP_BACKEND_URL + "/etudiants/inscription",
         "POST",
          JSON.stringify({
           numeroDA: formState.inputs.numeroDA.value,

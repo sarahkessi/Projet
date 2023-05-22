@@ -10,7 +10,7 @@ const Users = () => {
   useEffect(() => {
     const recupererUtilisateurs = async () => {
       try {
-        const reponseData = await sendRequest("http://localhost:5000/api/etudiants");
+        const reponseData = await sendRequest(process.env.REACT_APP_BACKEND_URL + "/etudiants");
 
         setEtudiants(reponseData.etudiants);
       } catch (err) {

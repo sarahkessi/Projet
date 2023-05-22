@@ -66,7 +66,7 @@ const NewStage = () => {
 
     try {
       const reponseData = await sendRequest(
-        "http://localhost:5000/api/stages/inscriptionStage",
+        process.env.REACT_APP_BACKEND_URL + "/stages/inscriptionStage",
         "POST",
          JSON.stringify({
           nomEntreprise: formState.inputs.nomEntreprise.value,
