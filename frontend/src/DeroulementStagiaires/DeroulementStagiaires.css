@@ -19,7 +19,7 @@ body {
     margin-bottom: 20px;
   }
   
-  h3 {
+  .titres-h3 {
     font-size: 34px;
     font-weight: bold;
     color: #0f530f;
@@ -30,7 +30,7 @@ body {
     font-family: 'Bitter', serif;
   }
   
-  h4 {
+  .tires-h4 {
     font-size: 1.2em;
     color: #007f00;
     margin-top: 10px;

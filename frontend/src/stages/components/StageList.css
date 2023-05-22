@@ -1,0 +1,17 @@
+.stage-list {
+    list-style: none;
+    margin: 1rem auto;
+    padding: 0;
+    width: 90%;
+    max-width: 40rem;
+  }
+
+  .tri {
+    width: 42%;
+    font: inherit;
+    border: 1px solid #ccc;
+    padding: 0.15rem 0.25rem;
+    margin-left: 10px;
+  }
+  .label-tri {margin-left: 450px;}
+  

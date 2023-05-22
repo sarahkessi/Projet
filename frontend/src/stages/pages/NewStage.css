@@ -1,0 +1,24 @@
+.select-stage {
+  width: 100%;
+  font: inherit;
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+  padding: 0.15rem 0.25rem;
+}
+
+.select-stage:focus {
+  outline: none;
+  background: #ebebeb;
+  border-color: #510077;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  align: center;
+}
+
+label,
+input {
+  display: block;
+}

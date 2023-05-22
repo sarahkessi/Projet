@@ -9,8 +9,8 @@ function Accueil() {
       <body>
 
       <main>
-        <section>
-          <article>
+        <section className="section">
+          <article className="article">
             <h2>Édition 2023</h2>
             <p>
               Bienvenue sur le site des stages de fin d'études des techniques de
@@ -40,7 +40,7 @@ function Accueil() {
               <li>Développement d'applications informatiques</li>
             </ul>
           </article>
-          <aside>
+          <aside className="aside"> 
             <figure>
               <img
                 src="https://larbrisseau.com/wp-content/uploads/2021/09/informatique.png"

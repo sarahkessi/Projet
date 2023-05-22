@@ -12,15 +12,16 @@ import FAQ from "./FAQ/FAQ";
 import ProfilsCompetences from "./ProfilsCompetences/ProfilsCompetences";
 import FormulaireEmployeurs from "./FormulaireEmployeurs/FormulaireEmployeurs";
 
-import MainNavigation from "./shared/Navigation/MainNavigation";
-import Footer from "./shared/Navigation/Footer";
+import MainNavigation from "./shared/components/Navigation/MainNavigation";
+import Users from "./user/pages/Users";
+import Footer from "./shared/components/Navigation/Footer";
+import NewStage from "./stages/pages/NewStage";
+import Stages from "./stages/pages/Stages";
+import UpdateStage from "./stages/pages/UpdateStage";
+import NewEtudiant from "./user/pages/NewEtudiant";
 
 function App() {
-
-  return (
-    <Router>
-      <MainNavigation />
-      <main>
+  let routes = (
     <Switch>
       <Route path="/" exact>
         <Accueil/>
@@ -37,11 +38,31 @@ function App() {
       <Route path="/FAQ" exact>
         <FAQ/>  
       </Route>
+      <Route path="/stages/nouveau" exact>
+        <NewStage/>
+      </Route>
+      <Route path="/stages" exact>
+        <Stages/>
+      </Route>
+      <Route path="/etudiants" exact>
+        <Users/>
+      </Route>
+      <Route path="/stages/:stageId">
+          <UpdateStage />
+        </Route>
+        <Route path="/etudiants/nouveau" exact>
+          <NewEtudiant/>
+        </Route>
     </Switch>
-    </main>
-    <Footer />
-  </Router>
   )
-}
+
+  return (
+    <Router>
+      <MainNavigation/>
+      <main>{routes}</main>
+      <Footer/>
+      </Router>
+);
+ }
 
 export default App;

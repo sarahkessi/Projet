@@ -5,10 +5,10 @@ function DeroulementStagiaires() {
     return (
       <div>
         <body>
-          <h3>Édition 2023 - Directives pour les étudiants</h3>
+          <h3 className="titres-h3">Édition 2023 - Directives pour les étudiants</h3>
           <div class="container">
             <p>
-              <h4>Tâches à effectuer par l'étudiant à la session d'automne (c'est-à-dire maintenant):</h4>
+              <h4 className="titres-h4"> Tâches à effectuer par l'étudiant à la session d'automne (c'est-à-dire maintenant):</h4>
               
             </p>
             <ul>

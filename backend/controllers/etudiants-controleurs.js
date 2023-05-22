@@ -4,13 +4,11 @@ const HttpErreur = require("../models/http-erreur");
 const Etudiant = require("../models/etudiant");
 const { get } = require("mongoose");
 
-const ETUDIANTS = [];
-
 const getEtudiants = async (requete, reponse, next) => {
   let etudiants;
 
   try {
-    etudiants = await Etudiant.find({}, "-motDePasse");
+    etudiants = await Etudiant.find({}, "-id");
   } catch {
     return next(new HttpErreur("Erreur accès utilisateurs"), 500);
   }
@@ -22,40 +20,29 @@ const getEtudiants = async (requete, reponse, next) => {
   });
 };
 
-const inscription = async (requete, reponse, next) => {
-  const { numeroDA, nom, courriel, profil, motDePasse } = requete.body;
-  let etudiantExiste;
-
-  try {
-    etudiantExiste = await Etudiant.findOne({ courriel: courriel });
-  } catch {
-    return next(new HttpErreur("Échec vérification, étudiant existe", 500));
-  }
-
-  if (etudiantExiste) {
-    return next(
-      new HttpErreur("Cet étudiant existe déjà, veuillez vous connecter", 442)
-    );
-  }
-
-  let nouvelEtudiant = new Etudiant({
+const ajoutEtudiant = async (requete, reponse, next) => {
+  const {
     numeroDA,
     nom,
     courriel,
     profil,
-    motDePasse,
-    stages: [],
+  } = requete.body;
+
+  const nouvelEtudiant = new Etudiant({
+    numeroDA,
+    nom,
+    courriel,
+    profil,
+    stages:[]
   });
 
   try {
     await nouvelEtudiant.save();
   } catch (err) {
-    console.log(err);
-    return next(new HttpErreur("Erreur lors de l'ajout de l'étudiant", 422));
+    const erreur = new HttpErreur("Ajout de l'élève échoué", 500);
+    return next(erreur);
   }
-  reponse
-    .status(201)
-    .json({ etudiant: nouvelEtudiant.toObject({ getter: true }) });
+  reponse.status(201).json({ etudiant: nouvelEtudiant });
 };
 
 const connexion = async (requete, reponse, next) => {
@@ -82,5 +69,5 @@ const connexion = async (requete, reponse, next) => {
 };
 
 exports.getEtudiants = getEtudiants;
-exports.inscription = inscription;
+exports.ajoutEtudiant = ajoutEtudiant;
 exports.connexion = connexion;

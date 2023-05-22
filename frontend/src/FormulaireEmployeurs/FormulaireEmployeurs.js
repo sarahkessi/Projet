@@ -7,7 +7,7 @@ function FormulaireEmployeurs() {
     <div>
       <section>
         <article>
-          <h4>Formulaire d'inscription de milieu de stage </h4>
+          <h4 className="titres-h4">Formulaire d'inscription de milieu de stage </h4>
           <p>
             Stages réguliers ayant lieu à la session hiver. Les stages sont du x
             janvier au x mai 2024 (il est toutefois possible après entente avec
